@@ -1,0 +1,11 @@
+[Unit]
+Description=Cloudflare Tunnel
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/cloudflared tunnel --url https://localhost:3001 --no-tls-verify
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
